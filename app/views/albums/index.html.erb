@@ -1,0 +1,18 @@
+<h2>Albums</h2>
+
+<table>
+  <tr>
+    <th>Album Title</th>
+    <th>User</th>
+    <th>Actions</th>
+  </tr>
+  <% @albums.each do |a| %>
+  <tr>
+    <td><%= link_to a.title, a %></td>
+    <td><%= link_to a.user_id, a %></td>
+    <td><%= link_to 'Edit', edit_album_path(a) %></td>
+    <td><%= link_to 'Delete', a, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
+<%= link_to 'New Album', new_album_path %>
