@@ -1,0 +1,12 @@
+<h2><%= @user.name %></h2>
+<p>Password: <%= @user.password %></p>
+
+<ul>
+  <% @user.albums.each do |a| %>
+  <li><%= link_to a.title, a %></li>
+  <% end %>
+</ul>
+  
+<%= link_to 'New Album', new_album_path(@album) %> |
+<%= link_to 'Edit Profile', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

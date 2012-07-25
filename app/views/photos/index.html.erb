@@ -1,0 +1,20 @@
+<h2>Photos</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Album Name</th>
+    <th>User</th>
+    <th>Delete</th>
+  </tr>
+  <% @photos.each do |p| %>
+  <tr>
+    <td><%= link_to p.title, p %></td>
+    <td><%= link_to p.album.title, p.album %></td>
+    <td><%= link_to p.album.user.name, p.user %></td>
+    <td><%= link_to 'x', p, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+  <% end %>  
+</table>
+
+<p><%= link_to 'New Photo', new_photo_path %> | <%= link_to 'Albums', albums_path %> | <%= link_to 'Users', users_path %></p>

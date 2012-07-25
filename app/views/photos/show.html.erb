@@ -1,0 +1,8 @@
+<h2>Photo</h2>
+
+<p><%= @photo.title %> from the album: <%= @photo.album.title %></p>
+<p>Uploaded by: <%= @photo.album.user.name %></p>
+
+<%= link_to 'Edit Photo', edit_photo_path(@photo) %> |
+<%= link_to 'Delete Photo', @photo, confirm: 'Are you sure?', method: :delete %> |
+<%= link_to 'View Albums', albums_path %>

@@ -1,4 +1,11 @@
 <h2><%= @album.title %></h2>
 <h3>Uploaded by: <%= @album.user_id %></h3>
 
-<p><%= link_to 'Albums', '/' %></p>
+<ul>
+  <% @album.photos.each do |p| %>
+  <li><%= link_to p.title, p %></li>
+  <% end %>
+</ul>
+<%= link_to 'Add Photo', new_photo_path(@photo) %> |
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', '/' %>
